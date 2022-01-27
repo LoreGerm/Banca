@@ -1,7 +1,3 @@
-
-
-
-
 class conto:
 
     def __init__(self, numero_conto, bilancio_conto, saldo=0):
