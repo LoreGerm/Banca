@@ -1,13 +1,13 @@
-from soluzione_it1.cliente import Cliente
-from soluzione_it1.banca import Banca
-from soluzione_it1.conto import Conto
+from soluzione_it1.cliente import cliente
+from soluzione_it1.bank import banca
+from soluzione_it1.conto import conto
 
 # CODICE DI TEST. Rispondi alle domande scritte nei commenti #
-cliente1 = Cliente('Davide', '3924663077')
-cliente2 = Cliente('Simona', '3335688985')
-cliente3 = Cliente('Marco', '3335688285')
-banca_san_paolo = Banca('Banca San Paolo')
-account = Conto('00001',cliente1)
+cliente1 = cliente('Davide', '3924663077')
+cliente2 = cliente('Simona', '3335688985')
+cliente3 = cliente('Marco', '3335688285')
+banca_san_paolo = banca('Banca San Paolo')
+account = conto('00001',cliente1)
 
 
 # Per questi print mi aspetto la stampa nel metodo __repr__
