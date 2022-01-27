@@ -11,9 +11,9 @@ account = conto('00001',cliente1)
 
 
 # Per questi print mi aspetto la stampa nel metodo __repr__
-print(account)
-print(banca_san_paolo)
-print(cliente1)
+print("Account", "\n", account, "\n")
+print("Banca", "\n", banca_san_paolo, "\n")
+print("Cliente", "\n", cliente1, "\n")
 
 
 
