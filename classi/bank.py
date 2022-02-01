@@ -27,16 +27,16 @@ class banca:
 
 
     def chiudi_conto_corrente(self, numero_conto):
-        for i in self.__conti_correnti:
-            if numero_conto == self.__conti_correnti.numero_conto:
-                canc = self.__conti_correnti.pop()
+        for i in range(len(self.__conti_correnti)):
+            if numero_conto == self.__conti_correnti[i].numero_conto:
+                canc = self.__conti_correnti[i].pop()
                 return True
         return False
 
     def rimuovi_cliente(self,id):
-        for i in self.__clienti:
-            if id == self.__clienti.numero_conto:
-                canc = self.__clienti.pop()
+        for i in range(len(self.__clienti)):
+            if id == self.__clienti[i].numero_conto:
+                canc = self.__clienti[i].pop()
                 return True
         return False
 
