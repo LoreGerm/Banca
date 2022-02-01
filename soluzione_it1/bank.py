@@ -7,4 +7,6 @@ class banca:
 
     def __repr__(self):
         return f"Nome banca: {self.__nome_banca} \n Numero clienti: {len(self.__clienti)} \n Numero conti corrente: {len(self.__conti_correnti)}"
+
+    
         
