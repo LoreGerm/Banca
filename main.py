@@ -1,6 +1,6 @@
-from soluzione_it1.cliente import cliente
-from soluzione_it1.bank import banca
-from soluzione_it1.conto import conto
+from classi.cliente import cliente
+from classi.bank import banca
+from classi.conto import conto
 
 # CODICE DI TEST. Rispondi alle domande scritte nei commenti #
 cliente1 = cliente('Davide', '3924663077')

@@ -1,4 +1,4 @@
-from soluzione_it1.cliente import cliente
+from classi.cliente import cliente
 
 
 class banca:
