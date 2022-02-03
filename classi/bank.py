@@ -4,13 +4,14 @@ from classi.cliente import cliente
 
 class banca:
 
-    def __init__(self, nome_banca,cliente = [],conto_corrente = []):
+    def __init__(self, nome_banca,cliente = [],conto_corrente = [],nazione = 'IT'):
+        self.__nazione = nazione
         self.__nome_banca = nome_banca
         self.__clienti = cliente
         self.__conti_correnti = conto_corrente
 
     def __repr__(self):
-        return f"Nome banca: {self.__nome_banca} \n Numero clienti: {len(self.__clienti)} \n Numero conti corrente: {len(self.__conti_correnti)}"
+        return f"Nome banca: {self.__nome_banca} \n Nazione banca: {self.__nazione} \n Numero clienti: {len(self.__clienti)} \n Numero conti corrente: {len(self.__conti_correnti)}"
 
 
     def apri_conto_corrente(self, conto):
@@ -43,6 +44,13 @@ class banca:
 
 
 
+    @property
+    def nazione(self):
+        return self.__nazione
+
+    @nazione.setter
+    def nazione(self,nazione):
+        self.__nazione = nazione
 
     @property
     def nome_banca(self):
