@@ -10,7 +10,7 @@ class conto:
         return f"Numero conto: {self.__numero_conto} \n {self.__bilancio_conto} \n Saldo: {self.__saldo} \n Operazioni effettuate: {len(self.__operazioni_effettuate)}"
 
     def versa_soldi(self,value):
-        self.__saldo = value
+        self.__saldo += value
 
     def preleva_soldi(self,value):
         if self.__saldo >= value:

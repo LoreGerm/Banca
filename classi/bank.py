@@ -34,9 +34,10 @@ class banca:
         return False
 
     def rimuovi_cliente(self,id):
+        canc = []
         for i in range(len(self.__clienti)):
             if id == self.__clienti[i].numero_conto:
-                canc = self.__clienti[i].pop()
+                canc.append(self.__clienti[i].pop())
                 return True
         return False
 
