@@ -2,6 +2,8 @@ import os
 import json
 from json import JSONEncoder
 
+from classi.cliente import cliente
+
 
 
 
@@ -39,10 +41,11 @@ class PersistenceHandler:
 
 
     def salva_banca(self,banca):
+        banca_encode = EmployeeEncoder().encode(banca)
         file = 'classi/file/banca.json'
         size = self.get_size(file)
         if size == 0:
-            b = [banca]
+            b = [banca_encode]
             self.over_write(file,b)
         else:
             all = json.loads(self.stampa_file(file))
@@ -52,10 +55,11 @@ class PersistenceHandler:
     
 
     def salva_clienti(self,clienti):
+        cliente_encode = EmployeeEncoder().encode(clienti)
         file = 'classi/file/clienti.json'
         size = self.get_size(file)
         if size == 0:
-            c = [clienti]
+            c = [cliente_encode]
             self.over_write(file,c)
         else:
             all = json.loads(self.stampa_file(file))

@@ -1,3 +1,4 @@
+import json
 from classi.cliente import cliente
 from classi.bank import banca
 from classi.conto import conto,contoSpecial
@@ -27,7 +28,6 @@ p.salva_banca(banca_fineco.__dict__)
 p.salva_conto(conto1)
 p.salva_conto(conto2)
 p.salva_conto(conto3)
-
 
 
 conto1.stampa_numero_conto_nome()
