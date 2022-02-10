@@ -17,9 +17,18 @@ conto3 = contoSpecial(1987,cliente3,82121454)
 
 p = PersistenceHandler()
 
-#p.salva_clienti(cliente1.__dict__)
-#p.salva_banca(banca_san_paolo.__dict__)
-#p.salva_conto(cont)
+p.salva_clienti(cliente1.__dict__)
+p.salva_clienti(cliente2.__dict__)
+p.salva_clienti(cliente3.__dict__)
+
+p.salva_banca(banca_san_paolo.__dict__)
+p.salva_banca(banca_fineco.__dict__)
+
+p.salva_conto(conto1)
+p.salva_conto(conto2)
+p.salva_conto(conto3)
+
+
 
 conto1.stampa_numero_conto_nome()
 conto1.stampa_saldo_nome()
