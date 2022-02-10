@@ -1,3 +1,6 @@
+import json
+
+
 class cliente:
 
     def __init__(self, nome_cliente, numero_telefono):

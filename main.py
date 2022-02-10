@@ -1,19 +1,19 @@
 from classi.cliente import cliente
 from classi.bank import banca
 from classi.conto import conto
+from classi.persistence import PersistenceHandler
 
 # CODICE DI TEST. Rispondi alle domande scritte nei commenti #
 cliente1 = cliente('Davide', '3924663077')
 cliente2 = cliente('Simona', '3335688985')
 cliente3 = cliente('Marco', '3335688285')
 banca_san_paolo = banca('Banca San Paolo')
-account = conto('00001',cliente1)
+cont = conto('00001',cliente1)
+p = PersistenceHandler()
 
-
-# Per questi print mi aspetto la stampa nel metodo __repr__
-print("Account", "\n", account, "\n")
-print("Banca", "\n", banca_san_paolo, "\n")
-print("Cliente", "\n", cliente1, "\n")
+#p.salva_clienti(cliente1.__dict__)
+#p.salva_banca(banca_san_paolo.__dict__)
+p.salva_conto(cont)
 
 
 

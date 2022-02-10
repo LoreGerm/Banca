@@ -19,7 +19,7 @@ class conto:
         self.__saldo += value
 
     def preleva_soldi(self,value):
-        if self.__saldo >= value:
+        if self.__saldo >= value + self.__tassa_prelievo:
             self.__saldo -= value - self.__tassa_prelievo
         else:
             return False
@@ -56,10 +56,7 @@ class conto:
     
     @operazioni_effettuate.setter
     def operazioni_effettuate(self,operazione):
-        if self.__operazioni_effettuate == []:
-            self.__operazioni_effettuate = operazione
-        else:
-            self.__operazioni_effettuate.append(operazione)
+        self.__operazioni_effettuate.append(operazione)
 
 
 
@@ -67,20 +64,19 @@ class conto:
 
 class contoSpecial(conto):
     __tassa_prelievo = 2.0
-    __data_inizio_debito = None
-
 
     def __init__(self, numero_conto, bilancio_conto, saldo=0, operazioni=[]):
         super().__init__(numero_conto, bilancio_conto, saldo, operazioni)
+        self.__data_inizio_debito = None
 
     def preleva_soldi(self, value):
         self.__saldo -= value - self.__tassa_prelievo
-        if self.__saldo < 0 and self.__data_inizio_debito != None:
+        if self.__saldo < 0 and self.__data_inizio_debito == None:
             self.__data_inizio_debito = Timestamp()
         
     def versa_soldi(self, value):
         super().versa_soldi(value)
-        if self.__saldo > 0:
+        if self.__saldo > 0 and self.__data_inizio_debito != None:
             self.__data_inizio_debito = None
             return "Saldo positivo"
         

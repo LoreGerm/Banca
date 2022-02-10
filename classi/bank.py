@@ -15,19 +15,14 @@ class banca:
 
 
     def apri_conto_corrente(self, conto):
-        if self.__conti_correnti == []:
-            self.__conti_correnti = conto
-        else:
-            self.__conti_correnti.append(conto)
+        self.__conti_correnti.append(conto)
 
     def aggiungi_cliente(self, cliente):
-        if self.__clienti == []:
-            self.__clienti = cliente
-        else:
-            self.__clienti.append(cliente)
+        self.__clienti.append(cliente)
 
 
     def chiudi_conto_corrente(self, numero_conto):
+        canc = []
         for i in range(len(self.__conti_correnti)):
             if numero_conto == self.__conti_correnti[i].numero_conto:
                 canc = self.__conti_correnti[i].pop()
@@ -37,11 +32,10 @@ class banca:
     def rimuovi_cliente(self,id):
         canc = []
         for i in range(len(self.__clienti)):
-            if id == self.__clienti[i].numero_conto:
+            if int(id) == self.__clienti[i].id:
                 canc.append(self.__clienti[i].pop())
                 return True
         return False
-
 
 
     @property
@@ -67,10 +61,7 @@ class banca:
     
     @clienti.setter
     def clienti(self,cliente):
-        if self.__clienti == []:
-            self.__clienti = cliente
-        else:
-            self.__clienti.append(cliente)
+        self.__clienti = cliente
     
 
     @property
@@ -79,8 +70,5 @@ class banca:
     
     @conti_correnti.setter
     def conti_correnti(self,conto):
-        if self.__conti_correnti == []:
-            self.__conti_correnti = conto
-        else:
-            self.__conti_correnti.append(conto)
+        self.__conti_correnti.append(conto)
         
