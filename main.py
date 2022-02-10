@@ -1,19 +1,35 @@
 from classi.cliente import cliente
 from classi.bank import banca
-from classi.conto import conto
+from classi.conto import conto,contoSpecial
 from classi.persistence import PersistenceHandler
 
 # CODICE DI TEST. Rispondi alle domande scritte nei commenti #
 cliente1 = cliente('Davide', '3924663077')
 cliente2 = cliente('Simona', '3335688985')
 cliente3 = cliente('Marco', '3335688285')
+
 banca_san_paolo = banca('Banca San Paolo')
-cont = conto('00001',cliente1)
+banca_fineco = banca('Banca San Paolo', 'GE')
+
+conto1 = contoSpecial(1588,cliente1,74845418744)
+conto2 = contoSpecial(1685,cliente2,54897412)
+conto3 = contoSpecial(1987,cliente3,82121454)
+
 p = PersistenceHandler()
 
 #p.salva_clienti(cliente1.__dict__)
 #p.salva_banca(banca_san_paolo.__dict__)
-p.salva_conto(cont)
+#p.salva_conto(cont)
+
+conto1.stampa_numero_conto_nome()
+conto1.stampa_saldo_nome()
+
+conto2.stampa_numero_conto_nome()
+conto2.stampa_saldo_nome()
+
+conto3.stampa_numero_conto_nome()
+conto3.stampa_saldo_nome()
+
 
 
 
